@@ -37,4 +37,4 @@ if (!is_null($events['events'])) {
 		echo $result . "\r\n";
 	}
 }
-echo "OK";
+echo "OK1";

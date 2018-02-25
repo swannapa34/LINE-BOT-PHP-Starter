@@ -16,7 +16,7 @@ if (!is_null($events['events'])) {
 		$messages = $event['message'];
 		$data = [
 			'replyToken' => $replyToken,
-			'messages' => [$messages],
+			'messages' => json_encode($messages),
 		];
 
 		// Make a POST Request to Messaging API to reply to sender

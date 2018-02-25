@@ -1,15 +1,87 @@
-<?php
-$access_token = 'xrhqDtb6g3XTZv7CBmnIgV0HhD/9X1PqYO9s4X5jFHlsz67xiW7ORKqxygxLvSiBjmUkv1aaSVLU1/P9bunN+8ZqrZMJe/4XWQX2MLmyje+Nb4GGER+F8Nz371T9EaCiKTm0cVQYpRx6RBbutqETDAdB04t89/1O/w1cDnyilFU=';
-
-$url = 'https://api.line.me/v1/oauth/verify';
-
-$headers = array('Authorization: Bearer ' . $access_token);
-
-$ch = curl_init($url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
-$result = curl_exec($ch);
-curl_close($ch);
-
-echo $result;
+curl -v -X POST https://api.line.me/v2/bot/richmenu \
+  -H 'Authorization: Bearer xrhqDtb6g3XTZv7CBmnIgV0HhD/9X1PqYO9s4X5jFHlsz67xiW7ORKqxygxLvSiBjmUkv1aaSVLU1/P9bunN+8ZqrZMJe/4XWQX2MLmyje+Nb4GGER+F8Nz371T9EaCiKTm0cVQYpRx6RBbutqETDAdB04t89/1O/w1cDnyilFU=' \
+  -H 'Content-Type:application/json' \
+  -d \
+  '{
+    "size":{
+        "width":2500,
+        "height":1686
+    },
+    "selected":false,
+    "name":"Controller",
+    "chatBarText":"Controller",
+    "areas":[
+        {
+          "bounds":{
+              "x":551,
+              "y":325,
+              "width":321,
+              "height":321
+          },
+          "action":{
+              "type":"message",
+              "text":"up"
+          }
+        },
+        {
+          "bounds":{
+              "x":876,
+              "y":651,
+              "width":321,
+              "height":321
+          },
+          "action":{
+              "type":"message",
+              "text":"right"
+          }
+        },
+        {
+          "bounds":{
+              "x":551,
+              "y":972,
+              "width":321,
+              "height":321
+          },
+          "action":{
+              "type":"message",
+              "text":"down"
+          }
+        },
+        {
+          "bounds":{
+              "x":225,
+              "y":651,
+              "width":321,
+              "height":321
+          },
+          "action":{
+              "type":"message",
+              "text":"left"
+          }
+        },
+        {
+          "bounds":{
+              "x":1433,
+              "y":657,
+              "width":367,
+              "height":367
+          },
+          "action":{
+              "type":"message",
+              "text":"btn b"
+          }
+        },
+        {
+          "bounds":{
+              "x":1907,
+              "y":657,
+              "width":367,
+              "height":367
+          },
+          "action":{
+              "type":"message",
+              "text":"btn a"
+          }
+        }
+    ]
+  }'
